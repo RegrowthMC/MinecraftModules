@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.lushplugins"
-version = "1.0.2"
+version = "1.0.3"
 
 subprojects {
     apply(plugin = "java-library")
@@ -30,7 +30,7 @@ subprojects {
         compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
 
         if (project.name != "core") {
-            compileOnly("org.lushplugins:LushLib:0.10.35")
+            compileOnlyApi("org.lushplugins:LushLib:0.10.35")
         }
 
         if (project.name != "core" && project.name != "common") {

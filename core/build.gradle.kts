@@ -13,6 +13,8 @@ dependencies {
 tasks {
     shadowJar {
         relocate("org.lushplugins.lushlib", "org.lushplugins.minecraftmodules.libraries.lushlib")
+
+        dependsOn(project(":common").tasks.named("shadowJar"))
     }
 }
 

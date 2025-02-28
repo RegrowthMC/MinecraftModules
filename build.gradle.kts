@@ -29,9 +29,9 @@ subprojects {
     dependencies {
         compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
 
-        if (project.name != "core") {
-            compileOnlyApi("org.lushplugins:LushLib:0.10.35")
-        }
+//        if (project.name != "core") {
+//            compileOnlyApi("org.lushplugins:LushLib:0.10.35")
+//        }
 
         if (project.name != "core" && project.name != "common") {
             compileOnly(project(":common"))

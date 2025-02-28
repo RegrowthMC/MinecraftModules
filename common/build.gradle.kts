@@ -1,3 +1,8 @@
+dependencies {
+    // Libraries
+    api("org.lushplugins:LushLib:0.10.35")
+}
+
 publishing {
     repositories {
         maven {

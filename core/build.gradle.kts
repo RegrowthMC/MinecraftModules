@@ -3,11 +3,8 @@ dependencies {
     compileOnly("com.mysql:mysql-connector-j:8.3.0")
     compileOnly("org.xerial:sqlite-jdbc:3.46.0.0")
 
-    // Libraries
-    api("org.lushplugins:LushLib:0.10.35")
-
     // Modules
-    implementation(project(":common"))
+    api(project(":common"))
 }
 
 tasks {

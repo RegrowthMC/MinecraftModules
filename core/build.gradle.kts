@@ -7,6 +7,12 @@ dependencies {
     implementation(project(":common"))
 }
 
+tasks {
+    shadowJar {
+        dependsOn(":common:shadowJar")
+    }
+}
+
 publishing {
     repositories {
         maven {

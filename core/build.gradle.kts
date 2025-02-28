@@ -4,15 +4,7 @@ dependencies {
     compileOnly("org.xerial:sqlite-jdbc:3.46.0.0")
 
     // Modules
-    api(project(":common"))
-}
-
-tasks {
-    shadowJar {
-        relocate("org.lushplugins.lushlib", "org.lushplugins.minecraftmodules.libraries.lushlib")
-
-        dependsOn(project(":common").tasks.named("shadowJar"))
-    }
+    implementation(project(":common"))
 }
 
 publishing {

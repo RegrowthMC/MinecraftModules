@@ -1,4 +1,9 @@
 subprojects {
+    dependencies {
+        // Modules
+        compileOnly(project(":common"))
+    }
+
     publishing {
         repositories {
             maven {

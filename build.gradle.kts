@@ -5,13 +5,23 @@ plugins {
 }
 
 group = "org.lushplugins"
-version = "1.0.6"
+version = "1.0.11"
 
-subprojects {
+allprojects {
     apply(plugin = "java-library")
     apply(plugin = "maven-publish")
     apply(plugin = "com.gradleup.shadow")
 
+    tasks {
+        shadowJar {
+            if (project.name != "common") {
+                relocate("org.lushplugins.lushlib", "org.lushplugins.minecraftmodules.libraries.lushlib")
+            }
+        }
+    }
+}
+
+subprojects {
     group = rootProject.group
     version = rootProject.version
 
@@ -28,14 +38,6 @@ subprojects {
 
     dependencies {
         compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
-
-//        if (project.name != "core") {
-//            compileOnlyApi("org.lushplugins:LushLib:0.10.35")
-//        }
-
-        if (project.name != "core" && project.name != "common") {
-            compileOnly(project(":common"))
-        }
     }
 
     java {
